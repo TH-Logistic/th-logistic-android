@@ -7,7 +7,7 @@
 
         <variable
             name="locationVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.maps.LocationVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.maps.LocationVM" />
 
         <variable
             name="mapExpanded"

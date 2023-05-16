@@ -6,11 +6,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.end_work.EndWorkVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.end_work.EndWorkVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 

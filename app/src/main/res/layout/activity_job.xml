@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 
@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-            <com.trunnghieu.tplogisticsapplication.ui.widgets.MovableFloatingActionButton
+            <com.trunnghieu.tplogistic.ui.widgets.MovableFloatingActionButton
                 android:id="@+id/btn_call_cso"
                 style="@style/Widget.MaterialComponents.FloatingActionButton"
                 android:layout_width="wrap_content"

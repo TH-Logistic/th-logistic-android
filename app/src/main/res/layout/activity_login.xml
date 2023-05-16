@@ -10,7 +10,7 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.login.LoginVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.login.LoginVM" />
 
     </data>
 

@@ -8,7 +8,7 @@
 
         <variable
             name="item"
-            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+            type="com.trunnghieu.tplogistic.data.repository.remote.delivery_workflow_service.Job" />
 
         <variable
             name="jobSelectionAllowed"
@@ -182,7 +182,7 @@
 
                             <TextView
                                 style="@style/TPLogistics.TextAppearance.Secondary"
-                                android:text="@string/history_customer_name" />
+                                android:text="@string/history_customer_sender_name" />
 
                             <TextView
                                 android:id="@+id/tv_customer_name"
@@ -208,7 +208,7 @@
                                 android:text="@string/history_product_type" />
 
                             <TextView
-                                android:id="@+id/tv_product_type"
+                                android:id="@+id/tv_product_name"
                                 style="@style/TPLogistics.TextAppearance.Primary"
                                 android:textColor="@color/textPrimary"
                                 android:textStyle="bold"

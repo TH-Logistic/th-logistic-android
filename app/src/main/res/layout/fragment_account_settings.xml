@@ -9,11 +9,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.account_settings.AccountSettingsVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.account_settings.AccountSettingsVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 

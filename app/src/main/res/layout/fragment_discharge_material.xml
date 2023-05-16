@@ -9,11 +9,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.discharge_material.DischargeMaterialVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.discharge_material.DischargeMaterialVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
         <variable
             name="showDischargeData"
@@ -49,7 +49,7 @@
                     layout="@layout/view_job_detail"
                     app:highlightDataChanged="@{jobVM.highlightDataChanged}"
                     app:jobData="@{jobVM.latestJob}"
-                    app:showWeightData="@{jobVM.latestJob.tripBase == false}" />
+                    app:showWeightData="@{jobVM.latestJob.tonBased == false}" />
 
                 <LinearLayout
                     style="@style/RootLayout.WrapHeight"

@@ -5,7 +5,7 @@
 
     <data>
 
-        <import type="com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst.AppLanguage" />
+        <import type="com.trunnghieu.tplogistic.utils.constants.TPLogisticsConst.AppLanguage" />
 
         <variable
             name="currentLanguage"

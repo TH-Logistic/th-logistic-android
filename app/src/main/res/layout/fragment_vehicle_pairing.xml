@@ -9,11 +9,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.vehicle_pairing.VehiclePairingVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.vehicle_pairing.VehiclePairingVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 

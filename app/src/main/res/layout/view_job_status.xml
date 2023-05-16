@@ -5,11 +5,11 @@
 
     <data>
 
-        <import type="com.trunnghieu.tplogisticsapplication.data.api.ApiConst.JobStatus" />
+        <import type="com.trunnghieu.tplogistic.data.api.ApiConst.JobStatus" />
 
         <variable
             name="jobStatus"
-            type="com.trunnghieu.tplogisticsapplication.data.api.ApiConst.JobStatus" />
+            type="com.trunnghieu.tplogistic.data.api.ApiConst.JobStatus" />
 
     </data>
 

@@ -7,11 +7,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.esign.ESignVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.esign.ESignVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 

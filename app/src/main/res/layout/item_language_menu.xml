@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.login.language.LanguageMenu" />
+            type="com.trunnghieu.tplogistic.ui.screens.login.language.LanguageMenu" />
 
         <variable
             name="selected"

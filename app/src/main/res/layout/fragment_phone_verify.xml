@@ -9,11 +9,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.phone_verify.PhoneVerifyVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.phone_verify.PhoneVerifyVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 
@@ -55,7 +55,7 @@
 
                     <include layout="@layout/spacing_vertical" />
 
-                    <com.trunnghieu.tplogisticsapplication.ui.widgets.VerifyCode
+                    <com.trunnghieu.tplogistic.ui.widgets.VerifyCode
                         android:id="@+id/view_verify_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />

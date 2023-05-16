@@ -7,13 +7,13 @@
 
         <import type="android.view.View" />
 
-        <import type="com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper" />
+        <import type="com.trunnghieu.tplogistic.utils.helper.LocaleHelper" />
 
-        <import type="com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst.AppLanguage" />
+        <import type="com.trunnghieu.tplogistic.utils.constants.TPLogisticsConst.AppLanguage" />
 
         <variable
             name="item"
-            type="com.trunnghieu.tplogisticsapplication.data.repository.local.menu.HamburgerMenu" />
+            type="com.trunnghieu.tplogistic.data.repository.local.menu.HamburgerMenu" />
 
         <variable
             name="defaultLanguage"

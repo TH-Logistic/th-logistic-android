@@ -8,7 +8,7 @@
 
         <variable
             name="item"
-            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.account.cso.CsoPhoneNumber" />
+            type="com.trunnghieu.tplogistic.data.repository.remote.account.cso.CsoPhoneNumber" />
 
         <variable
             name="firstItem"

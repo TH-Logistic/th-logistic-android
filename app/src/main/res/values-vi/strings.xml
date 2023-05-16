@@ -196,8 +196,10 @@
     <string name="history_pickup_location">Pickup Location</string>
     <string name="history_delivery_location">Delivery Location</string>
     <string name="history_signed_by">Signed by</string>
-    <string name="history_customer_name">Sender Name</string>
-    <string name="history_product_type">Product Type</string>
+    <string name="history_customer_sender_name">Người gửi</string>
+    <string name="history_customer_receiver_name">Người nhận</string>
+    <string name="history_product_name">Tên hàng hoá</string>
+    <string name="history_product_type">Loại hàng hoá</string>
     <string name="history_vehicle_no">Vehicle No.</string>
     <string name="history_vehicle_weight">Vehicle Weight</string>
     <string name="history_pickup_date">Pickup Date</string>
@@ -275,6 +277,9 @@
 
     <string name="job_summary_btn_continue_work">Tiếp tục</string>
     <string name="job_summary_btn_end_work">Hoàn thành</string>
+
+    <!-- Healthcheck -->
+    <string name="healthcheck_btn_start_work">Bắt đầu</string>
 
     <!-- End Work -->
     <string name="end_work_title">Hoàn thành</string>

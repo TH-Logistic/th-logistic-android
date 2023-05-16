@@ -195,7 +195,9 @@
     <string name="history_pickup_location">Pickup Location</string>
     <string name="history_delivery_location">Delivery Location</string>
     <string name="history_signed_by">Signed by</string>
-    <string name="history_customer_name">Sender Name</string>
+    <string name="history_customer_sender_name">Sender Name</string>
+    <string name="history_customer_receiver_name">Receiver Name</string>
+    <string name="history_product_name">Product Name</string>
     <string name="history_product_type">Product Type</string>
     <string name="history_vehicle_no">Vehicle No.</string>
     <string name="history_vehicle_weight">Vehicle Weight</string>
@@ -274,6 +276,9 @@
 
     <string name="job_summary_btn_continue_work">Continue Work</string>
     <string name="job_summary_btn_end_work">End Work</string>
+
+    <!-- Healthcheck -->
+    <string name="healthcheck_btn_start_work">Start Work</string>
 
     <!-- End Work -->
     <string name="end_work_title">End Work</string>

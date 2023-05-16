@@ -8,15 +8,15 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.delivery_location.DeliveryLocationVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.delivery_location.DeliveryLocationVM" />
 
         <variable
             name="locationVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.maps.LocationVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.maps.LocationVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 
@@ -49,7 +49,7 @@
                         layout="@layout/view_job_detail"
                         app:highlightDataChanged="@{jobVM.highlightDataChanged}"
                         app:jobData="@{jobVM.latestJob}"
-                        app:showWeightData="@{jobVM.latestJob.tripBase == false}" />
+                        app:showWeightData="@{jobVM.latestJob.tonBased == false}" />
 
                 </LinearLayout>
 

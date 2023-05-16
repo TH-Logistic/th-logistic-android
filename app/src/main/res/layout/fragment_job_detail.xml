@@ -4,15 +4,15 @@
 
     <data>
 
-        <import type="com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo" />
+        <import type="com.trunnghieu.tplogistic.data.repository.local.driver.DriverRepo" />
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.JobDetailVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.JobDetailVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 

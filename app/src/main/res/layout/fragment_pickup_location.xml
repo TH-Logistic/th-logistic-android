@@ -8,15 +8,15 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.pickup_location.PickupLocationVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.pickup_location.PickupLocationVM" />
 
         <variable
             name="locationVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.maps.LocationVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.maps.LocationVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 

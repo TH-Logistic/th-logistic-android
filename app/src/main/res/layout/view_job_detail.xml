@@ -8,7 +8,7 @@
 
         <variable
             name="jobData"
-            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+            type="com.trunnghieu.tplogistic.data.repository.remote.delivery_workflow_service.Job" />
 
         <variable
             name="showDetail"
@@ -78,7 +78,7 @@
                 app:titleLeft="@{@string/history_pickup_location}"
                 app:titleRight="@{@string/history_delivery_location}"
                 app:valueLeft="@{jobData.pickUpLocation}"
-                app:valueRight="@{jobData.deliveryLocation}" />
+                app:valueRight="@{jobData.unloadLocation}" />
 
             <View
                 android:layout_width="0dp"
@@ -118,10 +118,10 @@
                     layout="@layout/view_job_detail_child"
                     app:highlightLeft="@{false}"
                     app:highlightRight="@{false}"
-                    app:titleLeft="@{@string/history_customer_name}"
+                    app:titleLeft="@{@string/history_customer_sender_name}"
                     app:titleRight="@{@string/history_product_type}"
-                    app:valueLeft="@{jobData.customerName}"
-                    app:valueRight="@{jobData.product}" />
+                    app:valueLeft="@{jobData.pickUpContactName}"
+                    app:valueRight="@{jobData.productNames}" />
 
                 <LinearLayout style="@style/RootLayout.WrapHeight">
 
@@ -141,9 +141,9 @@
                             app:highlightLeft="@{false}"
                             app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_vehicle_no}"
-                            app:titleRight="@{@string/history_vehicle_weight}"
                             app:valueLeft="@{`59A-999.99`}"
-                            app:valueRight="@{`2 tons`}" />
+                            app:titleRight="@{@string/history_vehicle_weight}"
+                            app:valueRight="@{jobData.transportation.load + ` tons`}" />
 
                     </LinearLayout>
 
@@ -190,8 +190,8 @@
                             app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_pickup_date}"
                             app:titleRight="@{@string/history_pickup_time}"
-                            app:valueLeft="@{jobData.getFormattedDate(jobData.pickUpDoneTime)}"
-                            app:valueRight="@{jobData.getFormattedTime(jobData.pickUpDoneTime)}" />
+                            app:valueLeft="@{jobData.getDate(jobData.pickUpDoneAt)}"
+                            app:valueRight="@{jobData.getTime(jobData.pickUpDoneAt)}" />
 
                     </LinearLayout>
 
@@ -216,8 +216,8 @@
                             app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_discharge_date}"
                             app:titleRight="@{@string/history_discharge_time}"
-                            app:valueLeft="@{jobData.getFormattedDate(jobData.dischargeTime)}"
-                            app:valueRight="@{jobData.getFormattedTime(`Discharge`)}" />
+                            app:valueLeft="@{jobData.getDate(jobData.unloadDoneAt)}"
+                            app:valueRight="@{jobData.getTime(jobData.unloadDoneAt)}" />
 
                     </LinearLayout>
 

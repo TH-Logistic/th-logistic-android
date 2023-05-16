@@ -9,7 +9,7 @@
 
         <variable
             name="item"
-            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+            type="com.trunnghieu.tplogistic.data.repository.remote.delivery_workflow_service.Job" />
 
         <variable
             name="showDetailOnClick"

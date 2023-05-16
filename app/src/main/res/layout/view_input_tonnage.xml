@@ -7,7 +7,7 @@
 
         <import type="android.view.View"/>
 
-        <import type="com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst" />
+        <import type="com.trunnghieu.tplogistic.utils.constants.TPLogisticsConst" />
 
         <variable
             name="showValidate"

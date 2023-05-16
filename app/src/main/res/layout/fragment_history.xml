@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_history.HistoryVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_history.HistoryVM" />
 
     </data>
 

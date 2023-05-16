@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.upcoming_jobs.UpcomingJobsVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.upcoming_jobs.UpcomingJobsVM" />
 
     </data>
 

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.next_job.NextJobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.healthcheck.HealthcheckVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
-
-        <variable
-            name="locationVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.maps.LocationVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 
@@ -21,53 +19,70 @@
 
         <include
             layout="@layout/view_toolbar"
-            app:leftIconOnClick="@{() -> vm.backPress()}"
+            app:leftIcon="@{@drawable/ic_hamburger}"
+            app:leftIconOnClick="@{() -> jobVM.openMenu()}"
             app:showRefresh="@{false}"
-            app:title="@{@string/healthcheck_title}" />
+            app:title="@{@string/job_detail_title_job_summary}" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <LinearLayout
+            style="@style/TPLogistics.Layout.BorderTop.JobDetail"
+            android:baselineAligned="false">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:ignore="InefficientWeight">
+
+                <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                    <include
+                        layout="@layout/view_healthcheck_item"
+                        app:title="@{`Tires`}"
+                        app:value="@{vm.isTiresOk()}" />
+
+                    <include
+                        layout="@layout/view_healthcheck_item"
+                        app:title="@{`Light`}"
+                        app:value="@{vm.isLightOk()}" />
+
+                    <include
+                        layout="@layout/view_healthcheck_item"
+                        app:title="@{`Brake`}"
+                        app:value="@{vm.isBrakeOk()}" />
+
+                    <include
+                        layout="@layout/view_healthcheck_item"
+                        app:title="@{`Fluid level`}"
+                        app:value="@{vm.isFluidLevelOk()}" />
+
+                    <include
+                        layout="@layout/view_healthcheck_item"
+                        app:title="@{`Battery`}"
+                        app:value="@{vm.isBatteryOk()}" />
+
+                    <include
+                        layout="@layout/view_healthcheck_item"
+                        app:title="@{`Wiper`}"
+                        app:value="@{vm.isWiperOk()}" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
 
             <LinearLayout
-                style="@style/TPLogistics.Layout.BorderTop.JobDetail"
-                android:paddingStart="0dp"
-                android:paddingTop="0dp"
-                android:paddingEnd="0dp"
-                android:paddingBottom="0dp">
+                style="@style/RootLayout.WrapHeight"
+                android:layout_marginStart="@dimen/layout_margin_default"
+                android:layout_marginEnd="@dimen/layout_margin_default">
 
-                <androidx.coordinatorlayout.widget.CoordinatorLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:id="@+id/view_job_data"
-                        style="@style/RootLayout.WrapHeight"
-                        android:layout_marginStart="@dimen/layout_detail_padding_default"
-                        android:layout_marginEnd="@dimen/layout_detail_padding_default"
-                        android:background="@android:color/transparent"
-                        android:paddingTop="@dimen/layout_detail_padding_default">
-
-                        <include
-                            layout="@layout/view_job_title"
-                            app:bookingNo="@{vm.newJob.bookingNo}"
-                            app:loadNo="@{17}" />
-
-
-
-                    </LinearLayout>
-
-                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <com.google.android.material.button.MaterialButton
+                    style="@style/TPLogistics.MaterialButton.Accent"
+                    android:onClick="@{() -> vm.startWork()}"
+                    android:text="@string/healthcheck_btn_start_work" />
 
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
-                style="@style/TPLogistics.MaterialButton.Accent.Margin"
-                android:layout_gravity="bottom"
-                android:onClick="@{() -> vm.submitAcceptJob()}"
-                android:text="@string/next_job_btn_go" />
-
-        </FrameLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

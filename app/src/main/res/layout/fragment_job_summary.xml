@@ -7,11 +7,11 @@
 
         <variable
             name="vm"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.job_summary.JobSummaryVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job_detail.job_summary.JobSummaryVM" />
 
         <variable
             name="jobVM"
-            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+            type="com.trunnghieu.tplogistic.ui.screens.job.JobVM" />
 
     </data>
 
@@ -47,7 +47,7 @@
                         app:highlightDataChanged="@{jobVM.highlightDataChanged}"
                         app:jobData="@{jobVM.latestJob}"
                         app:showESign="@{false}"
-                        app:showWeightData="@{jobVM.latestJob.tripBase == false}" />
+                        app:showWeightData="@{jobVM.latestJob.tonBased == false}" />
 
                 </LinearLayout>
 
