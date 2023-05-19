@@ -148,21 +148,15 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
         })
     }
 
-    override fun accountConflicted() {
+    override fun accountConflicted() {}
 
-    }
+    override fun showLocationError() {}
 
-    override fun showLocationError() {
-    }
+    override fun showNetworkError() {}
 
-    override fun showNetworkError() {
-    }
+    override fun dismissConnectivityErrorPopup() {}
 
-    override fun dismissConnectivityErrorPopup() {
-    }
-
-    override fun connectivityChange(isConnected: Boolean) {
-    }
+    override fun connectivityChange(isConnected: Boolean) {}
 
     override fun showMenu(show: Boolean) {
         if (show) {
@@ -211,25 +205,19 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
         )
     }
 
-    override fun goToStartWork() {
-
-    }
+    override fun goToStartWork() {}
 
     override fun goToJobSummary() {
         getNavigator().rootFragment = JobSummaryFragment()
     }
 
-    override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-    }
+    override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
 
-    override fun onDrawerOpened(drawerView: View) {
-    }
+    override fun onDrawerOpened(drawerView: View) {}
 
-    override fun onDrawerClosed(drawerView: View) {
-    }
+    override fun onDrawerClosed(drawerView: View) {}
 
-    override fun onDrawerStateChanged(newState: Int) {
-    }
+    override fun onDrawerStateChanged(newState: Int) {}
 
     private fun showCallCSO(show: Boolean) {
         binding.btnCallCso.visibility = if (show) {

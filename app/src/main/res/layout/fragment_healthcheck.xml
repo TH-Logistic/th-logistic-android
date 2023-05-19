@@ -22,7 +22,7 @@
             app:leftIcon="@{@drawable/ic_hamburger}"
             app:leftIconOnClick="@{() -> jobVM.openMenu()}"
             app:showRefresh="@{false}"
-            app:title="@{@string/job_detail_title_job_summary}" />
+            app:title="@{@string/healthcheck_title}" />
 
         <LinearLayout
             style="@style/TPLogistics.Layout.BorderTop.JobDetail"
@@ -39,32 +39,32 @@
                     <include
                         layout="@layout/view_healthcheck_item"
                         app:title="@{`Tires`}"
-                        app:value="@{vm.isTiresOk()}" />
+                        app:value="@={vm.isTiresOk}" />
 
                     <include
                         layout="@layout/view_healthcheck_item"
                         app:title="@{`Light`}"
-                        app:value="@{vm.isLightOk()}" />
+                        app:value="@={vm.isLightOk}" />
 
                     <include
                         layout="@layout/view_healthcheck_item"
                         app:title="@{`Brake`}"
-                        app:value="@{vm.isBrakeOk()}" />
+                        app:value="@={vm.isBrakeOk}" />
 
                     <include
                         layout="@layout/view_healthcheck_item"
                         app:title="@{`Fluid level`}"
-                        app:value="@{vm.isFluidLevelOk()}" />
+                        app:value="@={vm.isFluidLevelOk}" />
 
                     <include
                         layout="@layout/view_healthcheck_item"
                         app:title="@{`Battery`}"
-                        app:value="@{vm.isBatteryOk()}" />
+                        app:value="@={vm.isBatteryOk}" />
 
                     <include
                         layout="@layout/view_healthcheck_item"
                         app:title="@{`Wiper`}"
-                        app:value="@{vm.isWiperOk()}" />
+                        app:value="@={vm.isWiperOk}" />
 
                 </LinearLayout>
 

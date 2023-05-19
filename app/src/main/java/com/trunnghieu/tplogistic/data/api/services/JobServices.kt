@@ -8,6 +8,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.PUT
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface JobServices {
     @GET("/api/v1/job/upcoming-jobs/{id}")
@@ -25,4 +26,10 @@ interface JobServices {
         @Path("id") jobId: String,
         @Body bodyRequest: UpdateJobStatusDto
     ): Call<BaseResponse<Boolean>>
+
+    @GET("/api/v1/job/history-jobs/{id}")
+    fun getHistoryJobs(
+        @Path("id") driverId: String,
+        @Query("date") date: String,
+    ): Call<BaseResponse<List<Job>>>
 }

@@ -128,4 +128,34 @@ class DeliveryWorkFlowRepo : BaseRepo() {
             })
         }
     }
+
+    fun getHistoryJobs(driverId: String, date: String, callback: BaseRepoCallback<List<Job>>) {
+        callback.run {
+            apiRequesting(true)
+            jobServices.getHistoryJobs(driverId, date).enqueue(object : Callback<BaseResponse<List<Job>>> {
+                override fun onResponse(
+                    call: Call<BaseResponse<List<Job>>>,
+                    response: Response<BaseResponse<List<Job>>>
+                ) {
+                    apiRequesting(false)
+                    if (response.isSuccessful) {
+                        getBodyResponse(response)?.let {
+                            it.data?.let { data -> apiResponse(data) }
+                        }
+                    } else {
+                        showMessage(getErrMessage(response))
+                    }
+                }
+
+                override fun onFailure(call: Call<BaseResponse<List<Job>>>, t: Throwable) {
+                    apiRequesting(false)
+                    if (t is UnknownHostException) {
+                        callback.connectionError()
+                        return
+                    }
+                    showMessage(t.message)
+                }
+            })
+        }
+    }
 }

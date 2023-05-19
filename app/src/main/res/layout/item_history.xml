@@ -49,17 +49,17 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.google.android.material.button.MaterialButton
-                    style="@style/TPLogistics.MaterialButton.Icon"
-                    android:onClick="@{downloadEdoOnClick}"
-                    app:icon="@drawable/ic_download" />
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    style="@style/TPLogistics.MaterialButton.Icon"-->
+<!--                    android:onClick="@{downloadEdoOnClick}"-->
+<!--                    app:icon="@drawable/ic_download" />-->
 
             </LinearLayout>
 
             <include
                 layout="@layout/view_job_detail"
                 app:jobData="@{item}"
-                app:showDetail="@{true}"
+                app:showDetail="@{item.showDetail}"
                 app:showNoteForDriver="@{false}"
                 app:showWeightData="@{false}" />
 

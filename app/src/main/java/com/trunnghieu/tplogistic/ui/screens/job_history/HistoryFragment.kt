@@ -33,7 +33,7 @@ class HistoryFragment : BaseFragment<FragmentHistoryBinding, HistoryVM>(), Histo
     private val historyAdapter = HistoryAdapter(this)
 
     override fun initView() {
-        binding.downloadBtn.visibility = View.GONE
+//        binding.downloadBtn.visibility = View.GONE
     }
 
     override fun initData() {
@@ -52,9 +52,7 @@ class HistoryFragment : BaseFragment<FragmentHistoryBinding, HistoryVM>(), Histo
         }
     }
 
-    override fun initAction() {
-
-    }
+    override fun initAction() {}
 
     override fun showDatePicker() {
         DateTimePicker.createDatePicker(

@@ -80,13 +80,13 @@
 
             </FrameLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/download_btn"
-                style="@style/TPLogistics.MaterialButton.Accent.Margin"
-                android:layout_gravity="center|bottom"
-                android:onClick="@{() -> vm.downloadAllEdo()}"
-                android:text="@string/history_btn_download_all"
-                android:visibility="@{vm.historyList.empty ? View.GONE : View.VISIBLE}" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/download_btn"-->
+<!--                style="@style/TPLogistics.MaterialButton.Accent.Margin"-->
+<!--                android:layout_gravity="center|bottom"-->
+<!--                android:onClick="@{() -> vm.downloadAllEdo()}"-->
+<!--                android:text="@string/history_btn_download_all"-->
+<!--                android:visibility="@{vm.historyList.empty ? View.GONE : View.VISIBLE}" />-->
 
         </LinearLayout>
 

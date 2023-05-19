@@ -92,8 +92,8 @@
     <string name="connectivity_services_msg_network_no_connected">Thiết bị của bạn hiện không kết nối mạng!</string>
 
     <!-- Call CSO -->
-    <string name="cso_title">Gọi chúng tôi</string>
-    <string name="cso_description">Hãy để chúng tôi giúp đỡ bạn</string>
+    <string name="request_billing_title">Gọi chúng tôi</string>
+    <string name="request_billing_description">Hãy để chúng tôi giúp đỡ bạn</string>
 
     <!-- Vehicle Pairing -->
     <string name="vehicle_pairing_title">Ghép phương tiện</string>

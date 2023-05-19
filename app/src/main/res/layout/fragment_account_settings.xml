@@ -45,24 +45,16 @@
 
                     <include
                         layout="@layout/view_input"
-                        app:enabled="@{false}"
+                        app:text="@={vm.driverName}"
+                        app:enabled="@{vm.isEditingProfile}"
                         app:hint="@{@string/account_settings_driver_name}" />
 
                     <include
                         android:id="@+id/input_phone"
                         layout="@layout/view_input"
-                        app:enabled="@{false}"
+                        app:text="@={vm.phoneNumber}"
+                        app:enabled="@{vm.isEditingProfile}"
                         app:hint="@{@string/account_settings_phone_number}" />
-
-                    <include
-                        layout="@layout/view_input"
-                        app:enabled="@{false}"
-                        app:hint="@{@string/account_settings_company}" />
-
-                    <include
-                        layout="@layout/view_input"
-                        app:enabled="@{false}"
-                        app:hint="@{@string/account_settings_vehicle_number}" />
 
                     <include layout="@layout/spacing_vertical" />
 

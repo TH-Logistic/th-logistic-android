@@ -6,6 +6,7 @@ import com.trunnghieu.tplogistic.data.repository.remote.BaseResponse
 import com.trunnghieu.tplogistic.data.repository.remote.account.info.AccountInfoResponse
 import com.trunnghieu.tplogistic.data.repository.remote.account.login.LoginDTO
 import com.trunnghieu.tplogistic.data.repository.remote.account.login.LoginResponse
+import com.trunnghieu.tplogistic.data.repository.remote.account.update_account.UpdateAccountInfoDto
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -93,44 +94,42 @@ class AccountRepo : BaseRepo() {
     }
 
     /**
-     * Request OTP code for phone verification
-     */
-    fun requestOtp() {
-
-    }
-
-    /**
-     * Confirm OTP code for phone verification
-     */
-    fun confirmOtp() {
-
-    }
-
-    /**
      * Update account info
      */
     fun updateAccountInfo(
-
+        driverId: String,
+        bodyRequest: UpdateAccountInfoDto,
+        callback: BaseRepoCallback<AccountInfoResponse>
     ) {
+        callback.run {
+            apiRequesting(true)
+            userServices.updateInfo(driverId, bodyRequest)
+                .enqueue(object : Callback<BaseResponse<AccountInfoResponse>> {
+                    override fun onResponse(
+                        call: Call<BaseResponse<AccountInfoResponse>>,
+                        response: Response<BaseResponse<AccountInfoResponse>>
+                    ) {
+                        apiRequesting(false)
+                        if (response.isSuccessful) {
+                            getBodyResponse(response)?.let {
+                                it.data?.let { data -> apiResponse(data) }
+                            }
+                        } else {
+                            showMessage(getErrMessage(response))
+                        }
+                    }
 
-    }
 
-    /**
-     * Update driver avatar
-     */
-    fun updateDriverAvatar(
-
-    ) {
-
-    }
-
-    /**
-     * Get CSO Phone number
-     */
-    fun getCsoPhoneNumber(
-
-    ) {
-
+                    override fun onFailure(call: Call<BaseResponse<AccountInfoResponse>>, t: Throwable) {
+                        apiRequesting(false)
+                        if (t is UnknownHostException) {
+                            callback.connectionError()
+                            return
+                        }
+                        showMessage(t.message)
+                    }
+                })
+        }
     }
 
 }

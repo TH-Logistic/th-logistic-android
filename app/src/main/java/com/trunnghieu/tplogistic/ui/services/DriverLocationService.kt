@@ -48,7 +48,6 @@ class DriverLocationService : Service() {
     override fun onCreate() {
         super.onCreate()
         context = this
-        showForegroundNotification()
     }
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -83,40 +82,6 @@ class DriverLocationService : Service() {
         stopTrackingLocation()
     }
 
-//    override fun onLocationChanged(location: Location) {
-//        CustomLogger.e("User's background location changed -->> $location")
-//        driverLocation = location
-//    }
-
-//    override fun onLocationFailed(type: Int) {
-//        CustomLogger.e("onLocationFailed: $type")
-//        FAnalytics.logEvent(
-//            FAnalytics.EVENT_UPDATE_DRIVER_LOCATION,
-//            FAnalytics.Analytic(FAnalytics.FIELD_LOCATION_FAIL, "Fail type: $type")
-//        )
-//        driverLocation = null
-//
-//        if (type == FailType.PERMISSION_DENIED) {
-//            stopTrackingLocation()
-//        }
-//    }
-
-//    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-//    }
-//
-//    override fun onProviderEnabled(provider: String) {
-//
-//    }
-//
-//    override fun onProviderDisabled(provider: String) {
-//        CustomLogger.e("onProviderDisabled: $provider")
-//        FAnalytics.logEvent(
-//            FAnalytics.EVENT_UPDATE_DRIVER_LOCATION,
-//            FAnalytics.Analytic(FAnalytics.FIELD_LOCATION_FAIL, "$provider is disabled")
-//        )
-//        driverLocation = null
-//    }
-
     private fun trackingLocation() {
         trackingLocationJob = CoroutineScope(Dispatchers.Main).launch {
             sendDriverLocation()
@@ -132,8 +97,6 @@ class DriverLocationService : Service() {
         CustomLogger.e("Stop tracking location")
         lastKnownLocationOfDriver = null
 
-        // Stop tracking location
-//        locationManager.cancel()
         fusedLocationClient.removeLocationUpdates(locationCallback)
 
         trackingLocationJob?.cancel()
@@ -143,32 +106,6 @@ class DriverLocationService : Service() {
         stopForeground(true)
 
         stopSelf()
-    }
-
-    private fun showForegroundNotification() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
-
-        // Only show foreground notification from Android 8
-        val pendingIntent = PendingIntent.getActivity(
-            context,
-            0,
-            Intent(context, IntroActivity::class.java).apply {
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-            },
-            NotificationUtils.pendingIntentFlag
-        )
-        val foregroundNotification = NotificationUtils.buildNotification(
-            context,
-            TPLogisticsApp.CHANNEL_ID,
-            TPLogisticsApp.CHANNEL_NAME,
-            TPLogisticsConst.NOTIFICATION_ICON,
-            context.getString(R.string.foreground_notification_title),
-            context.getString(R.string.foreground_notification_content),
-            NotificationCompat.PRIORITY_LOW,
-            1,
-            pendingIntent
-        )
-        startForeground(System.currentTimeMillis().toInt(), foregroundNotification)
     }
 
     @SuppressLint("MissingPermission")

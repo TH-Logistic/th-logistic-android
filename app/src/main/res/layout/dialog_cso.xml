@@ -41,13 +41,13 @@
 
             <TextView
                 style="@style/TPLogistics.TextAppearance.Primary"
-                android:text="@string/cso_title"
+                android:text="@string/request_billing_title"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
 
             <TextView
                 style="@style/TPLogistics.TextAppearance.Secondary"
-                android:text="@string/cso_description" />
+                android:text="@string/request_billing_description" />
 
             <View
                 android:layout_width="0dp"

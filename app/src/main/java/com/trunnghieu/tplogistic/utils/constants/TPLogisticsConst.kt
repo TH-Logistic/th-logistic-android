@@ -22,7 +22,7 @@ object TPLogisticsConst {
 
     object AppDateTime {
         const val SERVER_DATE = "yyyy-MM-dd HH:mm:ss.SSS"
-        const val HISTORY_FILTER_DATE = "dd MMM yyyy"
+        const val HISTORY_FILTER_DATE = "dd/MM/yyyy"
         const val JOB_DATE = "dd/MM/yyyy"
         const val JOB_TIME = "HH:mm"
         const val STATEMENT_DATE = "yyyyMMdd"
