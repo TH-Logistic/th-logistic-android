@@ -1,7 +1,13 @@
 package com.trunnghieu.tplogistic.data.repository.remote.delivery_workflow_service
 
+import android.os.Build
 import android.os.Parcelable
+import androidx.annotation.RequiresApi
+import com.trunnghieu.tplogistic.utils.constants.Const
 import kotlinx.parcelize.Parcelize
+import java.time.Instant
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 @Parcelize
 data class Job(
@@ -19,15 +25,15 @@ data class Job(
     val isTonBased: Boolean,
     var status: Int,
     val totalPrice: Double,
-    val mustDeliverAt: String,
-    val createdAt: String,
-    val assignedAt: String,
-    val acceptedAt: String?,
-    val pickUpArriveAt: String?,
-    val pickUpDoneAt: String?,
-    val unloadArriveAt: String?,
-    val unloadDoneAt: String?,
-    val completedAt: String?,
+    val mustDeliverAt: Long,
+    val createdAt: Long,
+    val assignedAt: Long,
+    val acceptedAt: Long?,
+    val pickUpArriveAt: Long?,
+    val pickUpDoneAt: Long?,
+    val unloadArriveAt: Long?,
+    val unloadDoneAt: Long?,
+    val completedAt: Long?,
     val pickUpContactName: String,
     val pickUpContactNo: String,
     val unloadContactName: String,
@@ -48,14 +54,23 @@ data class Job(
         }
     }
 
-    fun getDate(formattedInput: String?): String {
-        if (formattedInput.isNullOrEmpty()) return ""
-        return formattedInput.split(" ").getOrNull(1) ?: ""
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getDate(timestamp: Long?): String {
+        return getFormattedTimeFromTimestamp(timestamp, Const.DATE_FORMAT)
     }
 
-    fun getTime(formattedInput: String?): String {
-        if (formattedInput.isNullOrEmpty()) return ""
-        return formattedInput.split(" ").getOrNull(0) ?: ""
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getTime(timestamp: Long?): String {
+        return getFormattedTimeFromTimestamp(timestamp, Const.TIME_FORMAT)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun getFormattedTimeFromTimestamp(timestamp: Long?, format: String): String {
+        if (timestamp == null) return ""
+        val instant = Instant.ofEpochMilli(timestamp)
+        val date = instant.atZone(ZoneId.systemDefault()).toLocalDate()
+        val formatter = DateTimeFormatter.ofPattern(format)
+        return formatter.format(date)
     }
 
     fun getPickUpLatitude(): Double {

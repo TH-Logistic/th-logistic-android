@@ -10,8 +10,8 @@ plugins {
 
 // ----- Apk info
 String APK_NAME = "[DEV]TPL"
-int VERSION_CODE = 1
-String VERSION_NAME = "0.0.1"
+int VERSION_CODE = 2
+String VERSION_NAME = "1.0.2"
 
 static def getDate() {
     return new Date().format("yyyyMMdd")
@@ -26,8 +26,8 @@ android {
         applicationId "com.trunnghieu.tplogistic"
         minSdk 23
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
