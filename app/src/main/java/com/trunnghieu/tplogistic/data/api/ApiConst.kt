@@ -6,8 +6,8 @@ object ApiConst {
 
     // Url
     private const val API_VERSION = 1
-    private const val BASE_DEV_URL = "http://www.thinhlh.com"
-    private const val BASE_PROD_URL = "http://www.thinhlh.com"
+    private const val BASE_DEV_URL = "http://54.174.158.64"
+    private const val BASE_PROD_URL = "http://54.174.158.64"
 
     val BASE_API_URL = (
             if (Const.DEBUG_MODE)

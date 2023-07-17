@@ -16,7 +16,8 @@ class HeaderInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
         val requestBuilder = request.newBuilder()
-        requestBuilder.header(AUTH_HEADER, "Bearer ${appPrefs.getString(AppPrefs.LOGIN.ACCESS_TOKEN)}")
+//        requestBuilder.header(AUTH_HEADER, "Bearer ${appPrefs.getString(AppPrefs.LOGIN.ACCESS_TOKEN)}")
+        requestBuilder.header(AUTH_HEADER, "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGI0YWQwZGZjNWFmM2Y4M2Q1ZjVkYmMiLCJzY29wZXMiOlsiYWRtaW4iXSwiZXhwIjoxNjg5NTcwMTc2fQ.6RmJ_TD_EXDSlgEeNu3pSN56CWJHoX2MKN94DKQCNIM")
         request = requestBuilder.build()
         return chain.proceed(request)
     }
